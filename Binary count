@@ -1,0 +1,40 @@
+import java.util.*;
+public class binaryCount 
+{
+    public static void main(String args[])
+    {
+        int i,j,k,count=0;
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the string1:");
+        String str=sc.next();
+        System.out.print("Enter the string2:");
+        String str1=sc.next();
+        char arr[]= toChararray(str);
+        char arr1[]= toChararray(str1);
+        char str2[]=new char[arr.length];
+        for(i=0;i<arr.length;i++)
+        {
+            
+            str2[i]=(char) (arr[i]|arr1[i]);
+            
+        }
+        System.out.println(str2);
+        for(k=0;k<str2.length;k++)
+        {
+            if(str2[k]=='0')
+            {
+                count++;
+            }
+        }
+        System.out.print(count);
+    }
+    public static char[] toChararray(String str)
+    {
+        char ch[]=new char[str.length()];
+        for(int i=0;i<str.length();i++)
+        {
+            ch[i]=str.charAt(i);
+        }
+        return ch;
+    }
+}
